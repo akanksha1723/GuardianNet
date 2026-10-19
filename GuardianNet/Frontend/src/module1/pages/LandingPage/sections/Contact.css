@@ -1,0 +1,28 @@
+.gn-contact { background: var(--bg-surface-2); }
+
+.gn-contact-wrap {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.gn-contact-form { padding: 32px; max-width: 480px; }
+
+.gn-textarea-wrap svg { top: 16px; transform: none; }
+
+.gn-textarea { resize: vertical; min-height: 110px; padding-top: 12px; }
+
+.gn-contact-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--gn-success);
+}
+
+@media (max-width: 900px) {
+  .gn-contact-wrap { grid-template-columns: 1fr; }
+  .gn-contact-form { max-width: 100%; }
+}

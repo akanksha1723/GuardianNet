@@ -1,0 +1,64 @@
+.gn-quick-actions {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.gn-quick-actions-title {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.gn-quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gn-quick-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-2);
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-standard);
+  text-align: center;
+}
+
+.gn-quick-action-btn:hover {
+  border-color: var(--accent);
+  background: rgba(36, 81, 196, 0.06);
+  color: var(--accent);
+}
+
+.gn-quick-action-btn.is-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.gn-quick-action-btn.is-primary:hover {
+  background: var(--accent-hover);
+}
+
+.gn-quick-action-btn.is-danger {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+.gn-quick-action-btn.is-danger:hover {
+  background: var(--danger-hover);
+}
+
+.gn-quick-action-icon {
+  font-size: 1.4rem;
+}

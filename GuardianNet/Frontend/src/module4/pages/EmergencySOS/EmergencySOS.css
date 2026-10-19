@@ -1,0 +1,147 @@
+.gn-sos-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 860px;
+}
+
+.gn-sos-header h1 { font-size: 1.6rem; margin-bottom: 6px; }
+.gn-sos-header p  { margin-bottom: 16px; }
+
+.gn-sos-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.gn-loc-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+}
+
+.gn-loc-status.is-ok {
+  color: var(--gn-success);
+  border-color: rgba(31, 157, 110, 0.3);
+  background: rgba(31, 157, 110, 0.08);
+}
+
+.gn-loc-status.is-waiting {
+  color: var(--gn-warning);
+  border-color: rgba(217, 142, 28, 0.3);
+  background: rgba(217, 142, 28, 0.08);
+}
+
+.gn-shake-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.gn-shake-toggle input {
+  accent-color: var(--accent);
+  width: 15px;
+  height: 15px;
+}
+
+.gn-sos-btn-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.gn-sos-pending { display: flex; justify-content: center; }
+
+.gn-sos-pending-card {
+  max-width: 560px;
+  width: 100%;
+  padding: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gn-sos-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(230, 57, 70, 0.1);
+  color: var(--gn-red-500);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 auto;
+}
+
+.gn-sos-pending-card h2 { font-size: 1.4rem; }
+.gn-sos-cancel-btn { margin-top: 8px; }
+
+.gn-sos-accepted {
+  display: flex;
+  justify-content: center;
+}
+
+.gn-sos-accepted-card {
+  max-width: 480px;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.gn-sos-accepted-icon {
+  font-size: 3.5rem;
+  color: var(--gn-success);
+}
+
+.gn-sos-accepted-card h2 { font-size: 1.5rem; }
+
+.gn-sos-volunteer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.gn-sos-vol-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gn-blue-500), var(--gn-blue-700));
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gn-sos-volunteer-info div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.gn-sos-volunteer-info strong { font-size: 0.95rem; }
+.gn-sos-volunteer-info span   { font-size: 0.82rem; color: var(--text-secondary); }

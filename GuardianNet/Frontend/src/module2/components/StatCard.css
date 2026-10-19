@@ -1,0 +1,72 @@
+.gn-stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--dur-fast) var(--ease-standard);
+}
+
+.gn-stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.gn-stat-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.gn-stat-card--blue .gn-stat-card-icon {
+  background: rgba(36, 81, 196, 0.12);
+  color: var(--gn-blue-500);
+}
+
+.gn-stat-card--red .gn-stat-card-icon {
+  background: rgba(230, 57, 70, 0.12);
+  color: var(--gn-red-500);
+}
+
+.gn-stat-card--green .gn-stat-card-icon {
+  background: rgba(31, 157, 110, 0.12);
+  color: var(--gn-success);
+}
+
+.gn-stat-card--yellow .gn-stat-card-icon {
+  background: rgba(217, 142, 28, 0.12);
+  color: var(--gn-warning);
+}
+
+.gn-stat-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gn-stat-card-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.gn-stat-card-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.gn-stat-card-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.gn-stat-card-trend.up   { color: var(--gn-success); }
+.gn-stat-card-trend.down { color: var(--gn-red-500); }

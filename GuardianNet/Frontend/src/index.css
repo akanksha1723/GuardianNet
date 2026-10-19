@@ -1,0 +1,353 @@
+/* ============================================================
+   GuardianNet — Global Design Tokens & Base Styles
+   Palette: Blue / White / Red (per brief), expressed as a
+   "night-watch" command-center feel: deep navy authority,
+   alert red for emergencies, clean white/mist for calm states.
+   Type: Sora (display, used with restraint) + Inter (body)
+         + JetBrains Mono (stats, timestamps, data readouts)
+   ============================================================ */
+
+:root {
+  /* ---- Brand palette ---- */
+  --gn-blue-900: #0b1330;   /* deepest navy — dark bg */
+  --gn-blue-700: #15224a;   /* command navy — dark surfaces / light navbar text */
+  --gn-blue-500: #2451c4;   /* primary action blue */
+  --gn-blue-400: #4d72e0;   /* hover / lighter accents */
+  --gn-red-500: #e63946;    /* emergency red — SOS, alerts only */
+  --gn-red-600: #c5283d;    /* hover/pressed red */
+  --gn-white: #ffffff;
+  --gn-mist: #f4f6fb;       /* light mode background */
+  --gn-mist-200: #e9edf7;
+  --gn-slate-600: #54607a;  /* secondary text, light mode */
+  --gn-slate-300: #aab4cc;
+  --gn-slate-200: #dce3f0;  /* borders, light mode */
+  --gn-success: #1f9d6e;
+  --gn-warning: #d98e1c;
+
+  /* ---- Semantic tokens (light mode default) ---- */
+  --bg-page: var(--gn-mist);
+  --bg-surface: #ffffff;
+  --bg-surface-2: var(--gn-mist-200);
+  --bg-glass: rgba(255, 255, 255, 0.6);
+  --border-glass: rgba(21, 34, 74, 0.08);
+  --text-primary: var(--gn-blue-900);
+  --text-secondary: var(--gn-slate-600);
+  --text-on-accent: #ffffff;
+  --border-subtle: var(--gn-slate-200);
+  --accent: var(--gn-blue-500);
+  --accent-hover: var(--gn-blue-400);
+  --danger: var(--gn-red-500);
+  --danger-hover: var(--gn-red-600);
+  --shadow-soft: 0 8px 30px rgba(21, 34, 74, 0.08);
+  --shadow-card: 0 2px 14px rgba(21, 34, 74, 0.06);
+  --shadow-glow-red: 0 0 0 0 rgba(230, 57, 70, 0.45);
+
+  /* ---- Layout tokens ---- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --container-max: 1240px;
+  --nav-height: 76px;
+
+  /* ---- Type tokens ---- */
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 150ms;
+  --dur-med: 280ms;
+}
+
+[data-theme='dark'] {
+  --bg-page: var(--gn-blue-900);
+  --bg-surface: #121b3a;
+  --bg-surface-2: #182554;
+  --bg-glass: rgba(18, 27, 58, 0.55);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --text-primary: #eef1fb;
+  --text-secondary: #aab4cc;
+  --text-on-accent: #ffffff;
+  --border-subtle: #28335c;
+  --accent: #5b85ea;
+  --accent-hover: #7da0ff;
+  --danger: #ff5b67;
+  --danger-hover: #ff7b85;
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 2px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* ---- Reset ---- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  transition: background-color var(--dur-med) var(--ease-standard),
+    color var(--dur-med) var(--ease-standard);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.gn-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gn-mono {
+  font-family: var(--font-mono);
+}
+
+/* ---- Accessible focus ring (never remove outline without replacing it) ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Glassmorphism utility ---- */
+.gn-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--border-glass);
+}
+
+/* ---- Card utility ---- */
+.gn-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---- Buttons ---- */
+.gn-btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 26px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform var(--dur-fast) var(--ease-standard),
+    box-shadow var(--dur-fast) var(--ease-standard),
+    background-color var(--dur-fast) var(--ease-standard);
+  white-space: nowrap;
+}
+
+.gn-btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.gn-btn-primary {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.gn-btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 20px rgba(36, 81, 196, 0.3);
+}
+
+.gn-btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.gn-btn-danger:hover {
+  background: var(--danger-hover);
+  box-shadow: 0 8px 20px rgba(230, 57, 70, 0.35);
+}
+
+.gn-btn-ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+.gn-btn-ghost:hover {
+  background: var(--bg-surface-2);
+}
+
+.gn-btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+.gn-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---- Form elements (shared by Login/Register/Contact) ---- */
+.gn-field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.gn-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.gn-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gn-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.gn-input-wrap .gn-input-toggle {
+  position: absolute;
+  right: 14px;
+  left: auto;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.gn-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.gn-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.gn-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.gn-input.gn-input-error {
+  border-color: var(--danger);
+}
+
+.gn-error-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+.gn-helper-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Section spacing rhythm used across landing page ---- */
+.gn-section {
+  padding: 96px 0;
+}
+
+.gn-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(36, 81, 196, 0.1);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.gn-section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.gn-section-sub {
+  max-width: 620px;
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+  .gn-section {
+    padding: 64px 0;
+  }
+}

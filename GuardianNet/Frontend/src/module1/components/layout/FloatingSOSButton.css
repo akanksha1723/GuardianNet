@@ -1,0 +1,87 @@
+.gn-sos-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1100;
+  width: 72px;
+  height: 72px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gn-sos-core {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, var(--gn-red-500), var(--gn-red-600));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 24px rgba(230, 57, 70, 0.45);
+  transition: transform var(--dur-fast) var(--ease-standard);
+  gap: 1px;
+}
+
+.gn-sos-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.gn-sos-fab:hover .gn-sos-core {
+  transform: scale(1.06);
+}
+
+.gn-sos-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--gn-red-500);
+  opacity: 0;
+  animation: gn-sonar 2.4s ease-out infinite;
+}
+
+.gn-sos-ring-2 {
+  animation-delay: 1.2s;
+}
+
+@keyframes gn-sonar {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gn-sos-ring {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .gn-sos-fab {
+    bottom: 18px;
+    right: 18px;
+    width: 60px;
+    height: 60px;
+  }
+  .gn-sos-core {
+    width: 54px;
+    height: 54px;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,55 @@
+.gn-verify-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+}
+
+.gn-verify-status--yellow {
+  background: rgba(217, 142, 28, 0.08);
+  border-color: rgba(217, 142, 28, 0.3);
+  color: var(--gn-warning);
+}
+
+.gn-verify-status--blue {
+  background: rgba(36, 81, 196, 0.08);
+  border-color: rgba(36, 81, 196, 0.3);
+  color: var(--gn-blue-500);
+}
+
+.gn-verify-status--green {
+  background: rgba(31, 157, 110, 0.08);
+  border-color: rgba(31, 157, 110, 0.3);
+  color: var(--gn-success);
+}
+
+.gn-verify-status--red {
+  background: rgba(230, 57, 70, 0.08);
+  border-color: rgba(230, 57, 70, 0.3);
+  color: var(--gn-red-500);
+}
+
+.gn-verify-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gn-verify-status h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: inherit;
+}
+
+.gn-verify-status p {
+  font-size: 0.85rem;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.gn-verify-note {
+  margin-top: 6px !important;
+  font-style: italic;
+}

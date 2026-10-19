@@ -1,0 +1,116 @@
+.gn-vol-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+
+.gn-vol-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  background: linear-gradient(135deg, var(--gn-blue-700), var(--gn-blue-900));
+  border-radius: var(--radius-lg);
+  color: #fff;
+}
+
+.gn-vol-profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gn-vol-profile-info h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.gn-vol-profile-info p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 12px;
+}
+
+.gn-vol-avail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gn-vol-avail-btn.is-active {
+  background: var(--gn-success);
+  border-color: var(--gn-success);
+}
+
+.gn-vol-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 20px;
+}
+
+.gn-vol-bio-card { padding: 24px; }
+
+.gn-vol-bio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.gn-vol-bio-header h3 { font-size: 1rem; }
+
+.gn-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface-2);
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.gn-icon-btn:hover { color: var(--accent); border-color: var(--accent); }
+.gn-icon-btn--save:hover { color: var(--gn-success); border-color: var(--gn-success); }
+
+.gn-vol-ratings-card { padding: 24px; }
+.gn-vol-ratings-card h3 { margin-bottom: 16px; }
+
+.gn-vol-no-ratings {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.9rem;
+}
+
+.gn-vol-profile-loading,
+.gn-vol-profile-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .gn-vol-profile-grid { grid-template-columns: 1fr; }
+}

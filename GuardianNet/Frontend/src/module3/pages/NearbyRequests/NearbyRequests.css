@@ -1,0 +1,128 @@
+.gn-nearby-requests {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gn-nearby-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gn-nearby-header h1 { font-size: 1.6rem; margin-bottom: 6px; }
+.gn-nearby-header p  { font-size: 0.9rem; }
+
+.gn-nearby-accepted-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: rgba(31, 157, 110, 0.1);
+  border: 1px solid rgba(31, 157, 110, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--gn-success);
+  font-weight: 600;
+}
+
+.gn-nearby-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.gn-nearby-empty svg { font-size: 2.5rem; }
+.gn-nearby-empty h3  { font-size: 1.1rem; }
+
+.gn-nearby-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gn-nearby-card {
+  padding: 22px;
+  transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.gn-nearby-card.is-urgent {
+  border-color: var(--gn-red-500);
+  border-width: 1.5px;
+}
+
+.gn-nearby-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gn-nearby-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.gn-nearby-category svg { color: var(--gn-red-500); }
+
+.gn-nearby-urgent-badge {
+  font-size: 0.7rem;
+  background: var(--gn-red-500);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+}
+
+.gn-nearby-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.gn-nearby-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 12px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-sm);
+}
+
+.gn-nearby-location svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gn-nearby-location p {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.gn-nearby-location span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.gn-nearby-actions {
+  display: flex;
+  gap: 10px;
+}

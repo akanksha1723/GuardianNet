@@ -1,0 +1,136 @@
+.gn-fake-call-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--gn-success);
+  background: rgba(31, 157, 110, 0.08);
+  color: var(--gn-success);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-standard);
+}
+
+.gn-fake-call-trigger:hover {
+  background: rgba(31, 157, 110, 0.16);
+}
+
+.gn-fake-call-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gn-fake-call-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.gn-fake-call-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 40px;
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  width: 320px;
+  text-align: center;
+  animation: gn-call-slide-up 0.3s var(--ease-standard);
+}
+
+@keyframes gn-call-slide-up {
+  from { transform: translateY(40px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.gn-fake-caller-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gn-blue-500), var(--gn-blue-700));
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 8px rgba(36, 81, 196, 0.15);
+  animation: gn-call-avatar-ring 1.5s ease-in-out infinite;
+}
+
+.gn-fake-caller-avatar.is-active {
+  animation: none;
+  box-shadow: 0 0 0 4px rgba(31, 157, 110, 0.3);
+  background: linear-gradient(135deg, var(--gn-success), #16785a);
+}
+
+@keyframes gn-call-avatar-ring {
+  0%, 100% { box-shadow: 0 0 0 8px rgba(36, 81, 196, 0.15); }
+  50%       { box-shadow: 0 0 0 16px rgba(36, 81, 196, 0.05); }
+}
+
+.gn-fake-caller-name   { font-size: 1.4rem; }
+.gn-fake-caller-number { font-size: 0.9rem; color: var(--text-secondary); }
+.gn-fake-call-status   { font-size: 0.85rem; color: var(--text-secondary); }
+
+.gn-fake-call-duration {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--gn-success);
+}
+
+.gn-fake-call-actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.gn-fake-call-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.gn-fake-call-btn svg {
+  width: 56px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+.gn-fake-call-btn--decline svg,
+.gn-fake-call-btn--end svg {
+  background: var(--gn-red-500);
+  color: #fff;
+}
+
+.gn-fake-call-btn--answer svg {
+  background: var(--gn-success);
+  color: #fff;
+}
+
+.gn-fake-call-btn--end {
+  margin-top: 12px;
+}
+
+.gn-fake-call-btn--end svg {
+  width: 64px;
+  height: 64px;
+}

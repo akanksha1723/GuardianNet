@@ -1,0 +1,108 @@
+.gn-history-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 720px;
+}
+
+.gn-history-page h1 { font-size: 1.6rem; margin-bottom: 6px; }
+
+.gn-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px;
+  gap: 12px;
+  color: var(--text-secondary);
+}
+
+.gn-history-empty svg { font-size: 2.5rem; }
+.gn-history-empty h3  { font-size: 1.1rem; color: var(--text-primary); }
+
+.gn-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gn-history-card { padding: 22px; }
+
+.gn-history-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.gn-history-category {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.gn-history-category svg { color: var(--gn-red-500); }
+
+.gn-history-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.gn-history-status--green  { background: rgba(31,157,110,0.1); color: var(--gn-success); }
+.gn-history-status--red    { background: rgba(230,57,70,0.1);  color: var(--gn-red-500); }
+.gn-history-status--yellow { background: rgba(217,142,28,0.1); color: var(--gn-warning); }
+
+.gn-history-meta {
+  display: flex;
+  gap: 18px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.gn-history-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gn-history-rate-btn { margin-top: 4px; }
+
+.gn-history-rating { margin-top: 12px; }
+.gn-history-rating p { font-size: 0.88rem; margin-bottom: 10px; }
+
+.gn-history-stars { display: flex; gap: 6px; }
+
+.gn-star-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--border-subtle);
+  padding: 0;
+}
+
+.gn-star-btn.is-filled { color: var(--gn-warning); }
+
+.gn-history-rated {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.gn-history-rated span { margin-left: 6px; }
